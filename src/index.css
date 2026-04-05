@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #0A0F2C;
+  --color-electric-blue: #1E90FF;
+  --color-accent-green: #AAFF00;
+}
+
+@layer base {
+  body {
+    @apply bg-navy text-white font-sans;
+  }
+}
+
+@layer utilities {
+  .circuit-pattern {
+    background-image: url("https://www.transparenttextures.com/patterns/circuit-board.png");
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(30, 144, 255, 0.3);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 20px rgba(170, 255, 0, 0.3);
+  }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(30, 144, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
